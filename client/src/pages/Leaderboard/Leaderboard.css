@@ -1,0 +1,472 @@
+.leaderboard-page-container {
+    padding: 28px 36px;
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+/* Hero Card */
+.leaderboard-hero-card {
+    background: linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    border: 1px solid var(--border-glow);
+    border-radius: var(--radius-xl);
+    padding: 28px 34px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    box-shadow: var(--shadow-glow), var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.trophy-icon-gold {
+    color: #fbbf24;
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.6));
+}
+
+.leaderboard-hero-content h1 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.leaderboard-hero-content p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+/* My Rank Highlight Box */
+.my-rank-highlight-box {
+    background: rgba(99, 102, 241, 0.12);
+    border: 1px solid rgba(99, 102, 241, 0.4);
+    border-radius: var(--radius-lg);
+    padding: 16px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 220px;
+    text-align: right;
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+.my-rank-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #a5b4fc;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+}
+
+.my-rank-digits strong {
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 800;
+    margin-right: 6px;
+}
+
+.my-rank-digits span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.my-rank-score-pill {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.percentile-tag {
+    background: rgba(16, 185, 129, 0.18);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* Podium Section */
+.leaderboard-podium-section {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr 1fr;
+    gap: 20px;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.podium-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.2s ease;
+}
+
+.podium-card:hover {
+    transform: translateY(-4px);
+}
+
+.podium-card.champion {
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.12) 0%, rgba(15, 23, 42, 0.95) 100%);
+    border: 2px solid rgba(245, 158, 11, 0.6);
+    box-shadow: 0 0 30px rgba(245, 158, 11, 0.25);
+    padding-top: 32px;
+}
+
+.podium-card.silver {
+    border-color: rgba(203, 213, 225, 0.4);
+}
+
+.podium-card.bronze {
+    border-color: rgba(217, 119, 6, 0.4);
+}
+
+.crown-icon-box {
+    position: absolute;
+    top: -16px;
+    font-size: 1.8rem;
+    color: #fbbf24;
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));
+    animation: floatAnim 3s ease-in-out infinite;
+}
+
+.podium-rank-badge {
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gold-badge { background: #f59e0b; color: #000000; box-shadow: 0 0 12px rgba(245, 158, 11, 0.5); }
+.silver-badge { background: #94a3b8; color: #000000; }
+.bronze-badge { background: #b45309; color: #ffffff; }
+
+.podium-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 12px;
+}
+
+.gold-ring { border: 3px solid #f59e0b; color: #fbbf24; }
+.silver-ring { border: 3px solid #cbd5e1; color: #e2e8f0; }
+.bronze-ring { border: 3px solid #d97706; color: #f59e0b; }
+
+.podium-name {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.podium-college {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 14px;
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.podium-score-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.podium-score-box.gold-bg {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.podium-score-box strong {
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.podium-score-box span {
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+}
+
+/* Search Bar */
+.leaderboard-search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.search-form-flex {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    max-width: 460px;
+}
+
+.search-input-wrap {
+    position: relative;
+    flex: 1;
+}
+
+.search-input-wrap .search-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+}
+
+.search-input-wrap input {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 10px 14px 10px 38px;
+    color: #ffffff;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input-wrap input:focus {
+    border-color: var(--primary-light);
+}
+
+.search-btn {
+    padding: 10px 18px;
+}
+
+.total-students-indicator {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Table */
+.leaderboard-table-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.leaderboard-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.leaderboard-custom-table th {
+    background: rgba(15, 23, 42, 0.85);
+    padding: 16px 20px;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.leaderboard-custom-table td {
+    padding: 16px 20px;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: middle;
+}
+
+.rank-table-row:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.rank-table-row.current-user-row td {
+    background: rgba(99, 102, 241, 0.08);
+    border-bottom-color: rgba(99, 102, 241, 0.25);
+}
+
+.rank-badge-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+}
+
+.rank-badge-icon.gold { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+.rank-badge-icon.silver { background: rgba(203, 213, 225, 0.2); color: #e2e8f0; }
+.rank-badge-icon.bronze { background: rgba(217, 119, 6, 0.2); color: #f59e0b; }
+.rank-num { font-weight: 700; color: var(--text-secondary); }
+
+.student-profile-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.student-avatar-letter {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+
+.student-name-text {
+    font-size: 0.95rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.you-pill {
+    background: #6366f1;
+    color: #ffffff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.04em;
+}
+
+.student-college-text {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    display: block;
+}
+
+.perf-score-display {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.perf-score-display strong {
+    font-size: 1.1rem;
+    color: #34d399;
+    font-weight: 800;
+}
+
+.score-mini-bar {
+    width: 90px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.score-mini-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #6366f1, #34d399);
+    border-radius: 2px;
+}
+
+.metric-pill {
+    font-weight: 700;
+    font-size: 0.88rem;
+}
+
+.assessment-metric { color: #818cf8; }
+.quiz-metric { color: #22d3ee; }
+
+.courses-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    color: #fbbf24;
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.activity-cell {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+/* Pagination */
+.leaderboard-pagination-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background: rgba(15, 23, 42, 0.6);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.pagination-btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+}
+
+.page-indicator {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+}
+
+.empty-leaderboard-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 60px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 900px) {
+    .leaderboard-hero-card { flex-direction: column; align-items: flex-start; }
+    .my-rank-highlight-box { width: 100%; text-align: left; }
+    .leaderboard-podium-section { grid-template-columns: 1fr; }
+    .leaderboard-table-card { overflow-x: auto; }
+}
