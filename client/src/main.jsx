@@ -13,7 +13,7 @@ ReactDOM.createRoot(
 ).render(
     <React.StrictMode>
         <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID || "unavailable"}>
-            <BrowserRouter>
+            <BrowserRouter basename={import.meta.env.BASE_URL}>
                 <App />
             </BrowserRouter>
         </GoogleOAuthProvider>
