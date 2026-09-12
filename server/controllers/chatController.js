@@ -34,7 +34,7 @@ const askQuestion = async (req, res) => {
             { role: "user", content: message.trim() },
         ];
 
-        console.log(`[Chat] Calling AI service — model: ${process.env.AI_MODEL || "gemini-1.5-flash"}`);
+        console.log(`[Chat] Calling AI service — model: ${process.env.AI_MODEL || "gemini-3.6-flash"}`);
         const { answer, relatedQuestions, error: aiError } = await askAI(message.trim(), historyWithCurrent, context);
 
         // ── Surface AI-layer errors to the client ─────────────────────────────

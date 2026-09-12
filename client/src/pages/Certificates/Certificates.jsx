@@ -63,16 +63,11 @@ function Certificates() {
     const handleDownloadPDF = async (cert) => {
         try {
             setDownloadingId(cert.certificateId);
-            const token = localStorage.getItem("token");
-            const response = await fetch(`http://localhost:5000/api/certificates/${cert.certificateId}/download`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
+            const response = await api.get(`/certificates/${cert.certificateId}/download`, {
+                responseType: "blob",
             });
 
-            if (!response.ok) throw new Error("Download failed");
-
-            const blob = await response.blob();
+            const blob = new Blob([response.data], { type: "application/pdf" });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.href = url;
@@ -90,7 +85,8 @@ function Certificates() {
     };
 
     const handleCopyVerifyLink = (verificationCode) => {
-        const verifyUrl = `${window.location.origin}/verify/${verificationCode}`;
+        const basePath = import.meta.env.BASE_URL ? import.meta.env.BASE_URL.replace(/\/$/, "") : "";
+        const verifyUrl = `${window.location.origin}${basePath}/verify/${verificationCode}`;
         navigator.clipboard.writeText(verifyUrl);
         setCopiedCode(verificationCode);
         setTimeout(() => setCopiedCode(null), 2500);

@@ -37,8 +37,8 @@ let ai = null;
  * Does NOT validate the key format/prefix — accepts AQ., AIza, etc.
  */
 function getClient() {
-    // Prefer GEMINI_API_KEY, fall back to AI_API_KEY
-    const apiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY || "";
+    // Prefer AI_API_KEY, fall back to GEMINI_API_KEY
+    const apiKey = process.env.AI_API_KEY || process.env.GEMINI_API_KEY || "";
 
     const placeholders = ["", "your_gemini_api_key_here", "paste_your_gemini_api_key_here", "YOUR_API_KEY"];
     if (!apiKey || placeholders.includes(apiKey.toLowerCase().trim())) {
